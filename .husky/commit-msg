@@ -23,35 +23,35 @@ print_error() {
 # Check the type (feat, fix, etc.)
 if ! echo "$commit_message" | grep -Eq "^(feat|fix|build|chore|ci|docs|perf|refactor|revert|style|test) "; then
   print_error
-  echo "❌ Error: The commit type is invalid or not followed by a space."
+  echo "❌ Commit error: The commit type is invalid or not followed by a space."
   exit 1
 fi
 
 # Check the Jira task format
 if ! echo "$commit_message" | grep -Eq "\[(DEV|GEN)-[0-9]{1,}\]"; then
   print_error
-  echo "❌ Error: The Jira task format is incorrect. It should be in the format '[DEV-123]' or '[GEN-123]'."
+  echo "❌ Commit error: The Jira task format is incorrect. It should be in the format '[DEV-123]' or '[GEN-123]'."
   exit 1
 fi
 
 # Check for colon and space after the Jira task
 if ! echo "$commit_message" | grep -Eq "\]: "; then
   print_error
-  echo "❌ Error: Missing colon and space after the Jira task."
+  echo "❌ Commit error: Missing colon and space after the Jira task."
   exit 1
 fi
 
 # Check that the message starts with a capital letter
 if ! echo "$commit_message" | grep -Eq "\]: [A-Z]"; then
   print_error
-  echo "❌ Error: The commit message must start with a capital letter."
+  echo "❌ Commit error: The commit message must start with a capital letter."
   exit 1
 fi
 
 # Check for punctuation at the end
 if echo "$commit_message" | grep -Eq "[[:punct:]]$"; then
   print_error
-  echo "❌ Error: The commit message must not end with punctuation."
+  echo "❌ Commit error: The commit message must not end with punctuation."
   exit 1
 fi
 
