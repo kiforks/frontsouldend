@@ -2,7 +2,9 @@
   "name": "@frontsoulend/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
@@ -45,9 +47,11 @@
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^1.6.2",
+    "husky": "^9.1.6",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "~14.1.0",
+    "lint-staged": "^15.2.10",
     "nx": "20.0.0",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
