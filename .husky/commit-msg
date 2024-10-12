@@ -20,6 +20,12 @@ print_error() {
   echo ""
 }
 
+# Skip validation for merge commits
+if echo "$commit_message" | grep -q "^Merge"; then
+  echo "✅ Skipping validation for merge commit."
+  exit 0
+fi
+
 # Check the type (feat, fix, etc.)
 if ! echo "$commit_message" | grep -Eq "^(feat|fix|build|chore|ci|docs|perf|refactor|revert|style|test) "; then
   print_error
