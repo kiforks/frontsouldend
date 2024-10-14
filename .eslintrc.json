@@ -33,7 +33,6 @@
 					{
 						"enforceBuildableLibDependency": true,
 						"checkNestedExternalImports": true,
-						"banTransitiveDependencies": true,
 						"depConstraints": [
 							{
 								"sourceTag": "*",
@@ -72,7 +71,10 @@
 				"project": ["tsconfig.json"],
 				"createDefaultProgram": true
 			},
-			"extends": ["plugin:@nx/angular", "kifor/angular-typescript", "kifor/typescript"]
+			"extends": ["plugin:@nx/angular", "kifor/angular-typescript", "kifor/typescript"],
+			"rules": {
+				"@typescript-eslint/lines-between-class-members": "off"
+			}
 		},
 		{
 			"files": ["*.html"],
