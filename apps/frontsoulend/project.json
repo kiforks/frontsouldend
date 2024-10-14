@@ -77,6 +77,12 @@
 				"jestConfig": "apps/frontsoulend/jest.config.ts"
 			}
 		},
+		"stylelint": {
+			"executor": "nx-stylelint:lint",
+			"options": {
+				"lintFilePatterns": ["./src/**/*.scss"]
+			}
+		},
 		"serve-static": {
 			"executor": "@nx/web:file-server",
 			"options": {
