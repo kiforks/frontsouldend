@@ -73,6 +73,6 @@
 			"unitTestRunner": "jest"
 		}
 	},
-	"nxCloudId": "{env:NX_CLOUD_ID}",
-	"nxCloudAccessToken": "{env:NX_CLOUD_ACCESS_TOKEN}"
+	"nxCloudId": "{secrets:NX_CLOUD_ID}",
+	"nxCloudAccessToken": "{secrets:NX_CLOUD_ACCESS_TOKEN}"
 }
