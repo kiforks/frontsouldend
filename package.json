@@ -6,7 +6,9 @@
 		"prepare": "husky",
 		"format": "nx format:write",
 		"stylelint": "nx affected --target=stylelint --fix --base=origin/main --head=HEAD",
+		"stylelint:all": "npx stylelint ./**/*.scss --fix",
 		"lint": "nx affected --target=lint --fix --base=origin/main --head=HEAD",
+		"lint:all": "npx eslint './**/*.{js,jsx,ts,tsx,html}' --quiet --fix",
 		"test": "nx affected --target=test --base=origin/main --head=HEAD"
 	},
 	"private": true,
